@@ -7,7 +7,7 @@ import glob
 
 
 
-def convert_md_to_html(md_file, output_dir=None):
+def convert_md_to_html(md_file, output_path=None):
     # 读取 Markdown 文件
     with open(md_file, 'r', encoding='utf-8') as f:
         markdown_content = f.read()
@@ -18,12 +18,12 @@ def convert_md_to_html(md_file, output_dir=None):
     ])
 
     # 确定输出路径
-    if output_dir:
-        os.makedirs(output_dir, exist_ok=True)
-        base_name = os.path.basename(md_file).replace('.md', '.html')
-        output_path = os.path.join(output_dir, base_name)
-    else:
-        output_path = md_file.replace('.md', '.html')
+    # if output_dir:
+    #     os.makedirs(output_dir, exist_ok=True)
+    #     base_name = os.path.basename(md_file).replace('.md', '.html')
+    #     output_path = os.path.join(output_dir, base_name)
+    # else:
+    #     output_path = md_file.replace('.md', '.html')
 
     # 写入 HTML 文件
     with open(output_path, 'w', encoding='utf-8') as f:
@@ -34,7 +34,7 @@ def convert_md_to_html(md_file, output_dir=None):
 
 # 使用示例
 # 转换单个文件
-convert_md_to_html('D:\独立站\成人用品计划.md')
+# convert_md_to_html('D:\独立站\成人用品计划.md')
 
 # 转换目录中的所有 Markdown 文件
 # md_files = glob.glob('')
